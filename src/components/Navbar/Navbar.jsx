@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
 
-import logo from "../../../public/logo.png";
+import navLogo from "../../../public/nav-logo.png";
 import {
   IoSearchOutline,
   IoBagOutline,
@@ -15,7 +15,6 @@ import {
 
 function Navbar() {
   const pathname = usePathname();
-  console.log("pathname:", pathname);
 
   const menus = [
     {
@@ -41,17 +40,11 @@ function Navbar() {
   ];
 
   return (
-    <nav className="border border-red-600 px-4 lg:px-20 py-2 flex justify-between items-center">
+    <nav className="px-4 lg:px-20 py-2 flex justify-between items-center">
       <div className="flex items-center gap-2">
         <CgMenuLeft className="text-2xl block lg:hidden" />
         <Link href="/">
-          <Image
-            src={logo}
-            alt="Brand Logo"
-            // width={120}
-            placeholder="blur"
-            priority
-          />
+          <Image src={navLogo} alt="Brand Logo" width={140} priority />
         </Link>
       </div>
 
@@ -73,7 +66,7 @@ function Navbar() {
       </ul>
 
       <div className="flex items-center gap-4">
-        <div className="hidden lg:flex items-center gap-2 rounded-2xl  bg-common-white overflow-hidden">
+        <div className="hidden lg:flex items-center gap-2 rounded-2xl bg-common-white overflow-hidden">
           <div className="flex-shrink-0 pl-1 py-1">
             <IoSearchOutline />
           </div>
@@ -89,7 +82,7 @@ function Navbar() {
 
         <div className="relative">
           <IoBagOutline className="text-2xl" />
-          <div className="h-4 w-4 rounded-full bg-[#1E1E1E] text-[#F4F8FF] flex items-center justify-center  absolute -top-1 -right-1">
+          <div className="h-4 w-4 rounded-full bg-[#1E1E1E] text-default-color flex items-center justify-center  absolute -top-1 -right-1">
             <span className="text-xs">0</span>
           </div>
         </div>
